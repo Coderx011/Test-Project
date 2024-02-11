@@ -95,9 +95,20 @@ nav.navbar.navbar-expand-lg {
         flex-wrap: wrap;
 
         li{
-            a{
-                padding-bottom: 15px;
+            padding-bottom: 0px;
+            padding-top: 10px;
+        
+        & a{
+            padding-bottom: 12px;
+            border-bottom: 3px solid transparent;
+            
+            transition: all 0.4s ease;
+
+            &:hover{
+                border-color:  black;
             }
+        }
+        
         }
         
         li:not(:last-child){
@@ -114,9 +125,10 @@ nav.navbar.navbar-expand-lg {
         background-color: rgba(232, 232, 232, 0.811);
         padding: 4px;
         border-radius: 50px;
+
         i{
-           position: absolute;
-            left: 7px;
+            position: absolute;
+            left: 10px;
             top: 50%;
             transform: translateY(-50%);
             font-size: 16px;
@@ -128,7 +140,7 @@ nav.navbar.navbar-expand-lg {
             box-shadow: none;
             background-color: transparent;
             width: 100%;
-            padding-left: 25px;
+            padding-left: 30px;
         }
     }
 
