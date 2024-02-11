@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+h1,h2,h3,h4,h5,h6,p,figure{
+    margin: 0;
+    padding: 0;
+}
+@media (min-width: 1400px){
+.container {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+}
+body{
+    background: #f5f5f5;
+}
+/* ----------------Header---------------------- */
+.main-nav {
+    border-bottom: 1px solid #d3d3d3;
+}
+.component-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 12px;
+}
+.header-category {
+    display: flex;
+    gap: 20px;
+    color: #767676;
+
+    & p{
+        padding: 10px;
+        cursor: pointer;
+
+        &.active{
+            background-color: black;
+            color: White;
+            font-size: 18px;
+            border-radius: 3px;
+        }
+    }
+}
+
+
+.cart-country-detail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    i {
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .country-detail{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+
+        & .flg{
+            width: 100%;
+            height: 100%;
+
+            img{
+                width: 100%;
+            height: 100%;
+            }
+        }
+    }
+
+}
+.wishlist-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+nav.navbar.navbar-expand-lg {
+    background: transparent !important;
+    padding: 0;
+
+    button{
+            border: none;
+            box-shadow: none;
+    }
+    ul{
+        flex-wrap: wrap;
+
+        li{
+            a{
+                padding-bottom: 15px;
+            }
+        }
+        
+        li:not(:last-child){
+            margin-right: 15px;
+        }
+        
+    }
+    
+    .search{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background-color: rgba(232, 232, 232, 0.811);
+        padding: 4px;
+        border-radius: 50px;
+        i{
+           position: absolute;
+            left: 7px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 16px;
+        }
+
+        input{
+            border:none;
+            outline: none;
+            box-shadow: none;
+            background-color: transparent;
+            width: 100%;
+            padding-left: 25px;
+        }
+    }
+
+}
