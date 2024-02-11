@@ -36,14 +36,18 @@ body{
     color: #767676;
 
     & p{
-        padding: 10px;
-        cursor: pointer;
 
-        &.active{
-            background-color: black;
-            color: White;
-            font-size: 18px;
-            border-radius: 3px;
+        & a{
+            text-decoration: none;
+            color: #767676;
+            padding: 10px;
+
+            &.active{
+                background-color: black;
+                color: White;
+                font-size: 18px;
+                border-radius: 3px;
+            }
         }
     }
 }
@@ -106,6 +110,7 @@ nav.navbar.navbar-expand-lg {
 
             &:hover{
                 border-color:  black;
+                color: black;
             }
         }
         
