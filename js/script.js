@@ -1,8 +1,9 @@
 
 $(document).ready(function(){
 $('.custom1').owlCarousel({
-    loop:false,
+    loop:true,
     margin:20,
+    item:1,
     dotEach:true,
     nav:true,
     responsive:{
@@ -10,12 +11,13 @@ $('.custom1').owlCarousel({
             items:1
         },
         600:{
-            items:3
+            items:1
         },
         1000:{
-            items:4
+            items:1
         }
     }
+    
 });
 
 $('.owl-carousel').owlCarousel({
