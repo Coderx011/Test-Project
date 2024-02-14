@@ -105,8 +105,85 @@ if (filterButton) {
 }
 
 closeButton.addEventListener("click",closed);
+
+
+const listItems = document.querySelectorAll(".preview-box-main-inner ul li");
+    // Add event listener to each <li> element
+    listItems.forEach(function (item) {
+        item.addEventListener("click", toggleSelectedClass);
+    });
+
+const listedItems = document.querySelectorAll(".drop-down-main ul li");
+    // Add event listener to each <li> element
+    listedItems.forEach(function (item) {
+        item.addEventListener("click", toggleSelectedClass);
+    });
+
+ const resetButtons = document.querySelectorAll('.drop-down-footer');
+
+    // Add click event listener to each reset button
+    resetButtons.forEach(function (button) {
+        button.addEventListener('click', handleResetClick);
+    });
+ 
 });
 
+
+// out side function====================================================
+function toggleSelectedClass() {
+    // Toggle the "selected" class on the clicked <li> element
+    this.classList.toggle("active");
+}
+
+function clearAllClasses() {
+    // Get all <li> elements
+    const listItems = document.querySelectorAll(".preview-box-main-inner ul li");
+
+    const previewPrice = document.querySelectorAll(".preview-input-field input");
+    let minprice = parseInt(previewPrice[0].getAttribute("value")),
+    maxprice = parseInt(previewPrice[1].getAttribute("value"));
+    console.log(`This is price range from  ${minprice} to ${maxprice}`)
+
+    // Remove the "selected" class from all <li> elements
+    listItems.forEach(function (item) {
+        item.classList.remove("active");
+    });
+}
+
+function selectedItems(){
+    const listItems = document.querySelectorAll(".preview-box-main-inner ul li.active"),
+    previewPriceinput = document.querySelectorAll(".preview-input-field input");
+
+    
+    let minPrice = parseInt(previewPriceinput[0].value),
+    maxPrice = parseInt(previewPriceinput[1].value);
+    console.log(`This is price range from  ${minPrice} to ${maxPrice}`)
+
+    // Remove the "selected" class from all <li> elements
+    listItems.forEach(function (item) {
+       activeElement =  item.textContent;
+       console.log(activeElement);
+
+    });
+}
+
+// fucntion used to reset value of indvidual dropdown
+
+
+
+function handleResetClick() {
+    // 'this' refers to the clicked reset button
+    const clickedButton = this;
+
+    // Traverse the DOM to find the common parent div
+    const commonParentDiv = clickedButton.closest('.drop-down-inner');
+    const listedItems = commonParentDiv.querySelectorAll(".drop-down-main ul li"); 
+    
+    listedItems.forEach(function (item) {
+        item.classList.remove("active");
+    });
+   
+}
 
 
 $(document).ready(function(){
