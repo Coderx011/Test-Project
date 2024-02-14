@@ -1,6 +1,5 @@
-
-
-const rangeInput = document.querySelectorAll(".price-range-input input"),
+document.addEventListener("DOMContentLoaded", function() {
+    const rangeInput = document.querySelectorAll(".price-range-input input"),
 priceInput = document.querySelectorAll(".input-field input"),
 range = document.querySelector(".price-slider .price-progress-bar");
 let priceGap = 1000;
@@ -39,6 +38,74 @@ rangeInput.forEach(input =>{
         }
     });
 });
+// preview box slider
+const preinputrange = document.querySelectorAll(".preview-price-range-input input"),
+previewPriceinput = document.querySelectorAll(".preview-input-field input"),
+prange = document.querySelector(".preview-price-slider .progress-bar");
+let ppricegap = 5000;
+previewPriceinput.forEach(input =>{
+    input.addEventListener("input", e =>{
+        let minPrice = parseInt(previewPriceinput[0].value),
+        maxPrice = parseInt(previewPriceinput[1].value);
+        
+        if((maxPrice - minPrice >= ppricegap) && maxPrice <= preinputrange[1].max){
+            if(e.target.className === "input-min"){
+                preinputrange[0].value = minPrice;
+                prange.style.left = ((minPrice / preinputrange[0].max) * 100) + "%";
+            }else{
+                preinputrange[1].value = maxPrice;
+                prange.style.right = 100 - (maxPrice / preinputrange[1].max) * 100 + "%";
+            }
+        }
+    });
+});
+
+preinputrange.forEach(input =>{
+    input.addEventListener("input", e =>{
+        let minVal = parseInt(preinputrange[0].value),
+        maxVal = parseInt(preinputrange[1].value);
+        if((maxVal - minVal) < ppricegap){
+            if(e.target.className === "range-min"){
+                preinputrange[0].value = maxVal - ppricegap
+            }else{
+                preinputrange[1].value = minVal + ppricegap;
+            }
+        }else{
+            previewPriceinput[0].value = minVal;
+            previewPriceinput[1].value = maxVal;
+            prange.style.left = ((minVal / preinputrange[0].max) * 100) + "%";
+            prange.style.right = 100 - (maxVal / preinputrange[1].max) * 100 + "%";
+        }
+    });
+});
+
+
+const filterButton = document.querySelector('.filters-inner .filter'),
+      shadow = document.querySelector('.shadow'),
+      previewBox = document.querySelector('.preview-box-wrapper'),
+      closeButton = document.querySelector('.preview-box-header span.close');
+      Wersternwear = document.querySelector('.navbar-nav .nav-item .western-wear');
+      megamenu = document.querySelector('.mega-menu-wrapper');
+
+ let opener =  () => {
+    shadow.classList.add("active");
+    previewBox.classList.add("active");
+    document.querySelector('body').style.overflowY = "hidden";
+};
+
+
+let closed = () => {
+    shadow.classList.remove("active");
+    previewBox.classList.remove("active");
+    document.querySelector('body').style.overflowY = "auto";
+};
+
+if (filterButton) {
+    filterButton.addEventListener("click", opener);
+}
+
+closeButton.addEventListener("click",closed);
+});
 
 
 
@@ -73,7 +140,7 @@ $(document).ready(function(){
                 items:1
             },
             600:{
-                items:3
+                items:2
             },
             1000:{
                 items:4
@@ -82,3 +149,4 @@ $(document).ready(function(){
     });
     
     });
+

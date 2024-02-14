@@ -48,6 +48,7 @@
             
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container">
+                  <a class="navbar-brand" href="#"><img src="Assests/Main LOGO.png" alt=""></a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
@@ -57,7 +58,7 @@
                         <a class="nav-link" aria-current="page" href="#">Sales</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Western Wear</a>
+                        <a class="nav-link western-wear" href="#">Western Wear</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#">Easter Wear</a>
@@ -124,7 +125,36 @@
               </div>
         </div>
     </header>
-
+    <section id="mobile-header">
+      <div class="mobile-nav-bar-wrapper">
+        <div class="container">
+          <div class="mobile-nav-bar-inner">
+              <div class="mobile-nav-bar">
+                <div class="mobile-nav-bar-home mnb-edit">
+                  <span><i class="bi bi-house-door"></i></span>
+                  <span>Home</span>
+                </div>
+                <div class="mobile-nav-bar-category mnb-edit">
+                  <span><i class="bi bi-ui-checks-grid"></i></span>
+                  <span>Category</span>
+                </div>
+                <div class="mobile-nav-bar-brand mnb-edit">
+                  <span><i class="bi bi-shop-window"></i></span>
+                  <span>Brands</span>
+                </div>
+                <div class="mobile-nav-bar-wishlist mnb-edit">
+                  <span><i class="fa-regular fa-heart"></i></span>
+                  <span>Wishlist</span>
+                </div>
+                <div class="mobile-nav-bar-profile mnb-edit">
+                  <span><i class="bi bi-person-circle"></i></span>
+                  <span>Profile</span>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <Section id="head-2">
         <div class="head-2-wrapper">
           <div class="container">
@@ -350,7 +380,7 @@
       <div class="preview-box-inner">
           <div class="preview-box-header">
             <span>Filters</span>
-            <span>X</span>
+            <span class="close">X</span>
           </div>
               <div class="preview-box-main">
                   <div class="preview-box-main-inner">
@@ -362,22 +392,22 @@
                       </div>
                       <div class="drop-down-main">
                         <div class="price-drop-down">
-                          <div class="input-field">
+                          <div class="preview-input-field">
                             <div class="field">
                               <span>From</span>
-                              <input type="number" class="input-min" value="2500">
+                              <input type="number" class="input-min" value="0" step="500">
                             </div>
                             <div class="field">
                               <span>TO</span>
-                              <input type="number" class="input-max" value="90000">
+                              <input type="number" class="input-max" value="100000" step="500">
                             </div>
                           </div>
-                          <div class="price-slider">
-                            <di class="price-progress-bar"></di>
+                          <div class="preview-price-slider">
+                            <di class="progress-bar"></di>
                           </div>
-                          <div class="price-range-input">
-                            <input type="range" class="range-min" min="0" max="100000" value="2500">
-                            <input type="range" class="range-max" min="0" max="100000" value="90000">
+                          <div class="preview-price-range-input">
+                            <input type="range" class="range-min" min="0" max="100000" value="0">
+                            <input type="range" class="range-max" min="0" max="100000" value="100000">
                           </div>
                         </div>
                       </div>
@@ -499,11 +529,12 @@
                   </div>
               </div>
           <div class="preview-box-footer">
-                  <span>Clear all</span>
-                  <span>Show Results</span>
+                  <span class="clear-selected">Clear all</span>
+                  <span class="show-result">Show Results</span>
           </div>
       </div>
   </div>
+  
     <section id="prduct-detail">
       <div class="product-detail-wrapper">
         <div class="container">
@@ -1269,7 +1300,7 @@
 
 
 
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ></script>
     <script src="https://kit.fontawesome.com/ed6b870279.js" crossorigin="anonymous"></script>
