@@ -103,8 +103,9 @@ let closed = () => {
 if (filterButton) {
     filterButton.addEventListener("click", opener);
 }
-
+if (closeButton) {
 closeButton.addEventListener("click",closed);
+}
 
 
 const listItems = document.querySelectorAll(".preview-box-main-inner ul li");
@@ -125,7 +126,40 @@ const listedItems = document.querySelectorAll(".drop-down-main ul li");
     resetButtons.forEach(function (button) {
         button.addEventListener('click', handleResetClick);
     });
- 
+
+
+
+    const listsize = document.querySelectorAll(".product-avilable-sizes span");
+    
+    listsize.forEach((item) => {
+        // Check if the span has the 'disabled' class
+        if (!item.classList.contains("disabled")) {
+            // Add event listener only if it doesn't have the 'disabled' class
+            item.addEventListener("click", (event) => {
+                // Remove 'active' class from all spans
+                listsize.forEach((item) => {
+                    item.classList.remove("active");
+                });
+                // Add 'active' class to the clicked span
+                item.classList.toggle("active");
+            });
+        }
+    });
+
+    // Prpduct detail function
+    const productBrand = document.querySelector(".brand-text span"),
+    productName = document.querySelector(".price-text > span"),
+    productId = document.querySelector(".price-text .product-id-btn"),
+    productPrice = document.querySelector(".detailed-price .d-price span:nth-child(2)"),
+    productSize = document .querySelectorAll(".product-avilable-sizes span")
+
+    console.log(productBrand.textContent , productName.textContent ,productId.textContent , productPrice.textContent ,productSize);
+
+
+
+
+    // ===========DOM=========
+
 });
 
 
@@ -161,8 +195,8 @@ function selectedItems(){
 
     // Remove the "selected" class from all <li> elements
     listItems.forEach(function (item) {
-       activeElement =  item.textContent;
-       console.log(activeElement);
+    activeElement =  item.textContent;
+    console.log(activeElement);
 
     });
 }
@@ -182,8 +216,47 @@ function handleResetClick() {
     listedItems.forEach(function (item) {
         item.classList.remove("active");
     });
-   
+
 }
+
+// ===================icnrenent decremwent========
+
+let counter = 1;
+
+function incrementValue(element) {
+    // Get the input element within the same parent
+    let inputElement = element.closest('.prduct-quantity-inner');
+    let productNumber = inputElement.querySelector(".product-numbers");
+    counter++
+    // Increment the value
+    if (counter <= 5) {
+        productNumber.textContent = counter;
+    } else {
+        alert("Want to order in BUlk");
+    }
+    
+}
+
+function decrementValue(element) {
+    // Get the input element within the same parent
+    let inputElement = element.closest('.prduct-quantity-inner');
+    let productNumber = inputElement.querySelector(".product-numbers");
+
+    counter--;
+    // Check if the value is greater than 1 before decrementing
+    if (counter > 1) {
+        // Decrement the value
+        
+        productNumber.textContent = counter;
+    } else {
+        // Set the value to 1 if it's already 1
+        productNumber.textContent = 1;
+        counter = 1
+    }
+
+}
+
+
 
 
 $(document).ready(function(){

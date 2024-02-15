@@ -1018,6 +1018,10 @@ section#cart-mobile .add-cart-inner {
         background-color: black;
         color: white;
     }
+    &.active{
+        background-color: black;
+        color: white;
+    }
 }
 .product-avilable-sizes span.disabled {
     

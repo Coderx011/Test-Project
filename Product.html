@@ -246,6 +246,7 @@
                 </div>
                 
               </div>
+              <!-- ============price section=======? -->
               <div class="col-lg-4">
                 <div class="price-section">
                   <div class="price-detail-section">
@@ -254,7 +255,7 @@
                         <span>Muraqsh</span>
                       </div>
                       <span>3 PC - Burgundy on White - Safari Pockets - Menswear</span>
-                      <button type="button">ID :JUJ9868</button>
+                      <button type="button" class="product-id-btn">ID :JUJ9868</button>
                       <div class="express-delivery">
                         <span>express</span>
                       </div>
@@ -286,13 +287,14 @@
                       <div class="measure-size">
                         <div class="order-size">
                           Size:<span>*</span> 
+                          <span></span>
                         </div>
                         <div class="size-guide">
                           <span>Size Guide</span>
                         </div>
                       </div>
                       <div class="product-avilable-sizes">
-                        <span><i class="bi bi-lightning-charge-fill"></i> S</span>
+                        <span ><i class="bi bi-lightning-charge-fill"></i> S</span>
                         <span class="disabled"><i class="bi bi-lightning-charge-fill"></i> M</span>
                         <span><i class="bi bi-lightning-charge-fill"></i> L</span>
                         <span><i class="bi bi-lightning-charge-fill"></i> XL</span>
@@ -304,11 +306,11 @@
                       <h5>Quantity</h5>
                       <div class="product-quantity-wrapper">
                         <div class="prduct-quantity-inner">
-                          <button type="button" class="product-m">
+                          <button type="button" class="product-m" onclick="decrementValue(this)">
                             <i class="bi bi-dash"></i>
                           </button>
                           <span class="product-numbers">1</span>
-                          <button type="button" class="product-p">
+                          <button type="button" class="product-p" onclick="incrementValue(this)">
                             <i class="bi bi-plus-lg"></i>
                           </button>
                         </div>
