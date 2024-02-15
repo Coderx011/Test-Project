@@ -1006,7 +1006,7 @@ section#cart-mobile .add-cart-inner {
     padding-inline-start: 5px;
     flex-wrap: wrap;
 }
-.product-avilable-sizes span {
+.product-avilable-sizes button {
     border: 1px solid rgba(202, 202, 202, 0.953);
     border-radius: 3px;
     padding: 3px 10px;
@@ -1023,7 +1023,7 @@ section#cart-mobile .add-cart-inner {
         color: white;
     }
 }
-.product-avilable-sizes span.disabled {
+.product-avilable-sizes button.disabled {
     
     opacity: 0.5;
     cursor: default;
@@ -1034,7 +1034,7 @@ section#cart-mobile .add-cart-inner {
     }
 
 }
-.product-avilable-sizes span i {
+.product-avilable-sizes button i {
     color: rgba(249, 212, 2, 0.821);
 }
 .product-quantity-wrapper {

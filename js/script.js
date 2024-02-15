@@ -129,13 +129,22 @@ const listedItems = document.querySelectorAll(".drop-down-main ul li");
 
 
 
-    const listsize = document.querySelectorAll(".product-avilable-sizes span");
     
+    
+   
+    // Prpduct detail function
+    const listsize = document.querySelectorAll(".product-avilable-sizes button");
+    const productBrand = document.querySelector(".brand-text span"),
+    productName = document.querySelector(".price-text > span"),
+    productId = document.querySelector(".price-text .product-id-btn"),
+    productQuantity = document.querySelector(".product-numbers"),
+    productPrice = document.querySelector(".detailed-price .d-price span:nth-child(2)"),
+    addCart = document.querySelector(".add-cart");
+
     listsize.forEach((item) => {
-        // Check if the span has the 'disabled' class
         if (!item.classList.contains("disabled")) {
-            // Add event listener only if it doesn't have the 'disabled' class
-            item.addEventListener("click", (event) => {
+            item.addEventListener("click", () => {
+               
                 // Remove 'active' class from all spans
                 listsize.forEach((item) => {
                     item.classList.remove("active");
@@ -146,14 +155,37 @@ const listedItems = document.querySelectorAll(".drop-down-main ul li");
         }
     });
 
-    // Prpduct detail function
-    const productBrand = document.querySelector(".brand-text span"),
-    productName = document.querySelector(".price-text > span"),
-    productId = document.querySelector(".price-text .product-id-btn"),
-    productPrice = document.querySelector(".detailed-price .d-price span:nth-child(2)"),
-    productSize = document .querySelectorAll(".product-avilable-sizes span")
+addCart.addEventListener("click", () => {
+    const activeSizeButton = Array.from(listsize).find(item => item.classList.contains('active'));
+    const requiredSize = activeSizeButton ? activeSizeButton.querySelector('span').textContent : null;
+;
+    if (requiredSize) {
+        console.log(`Selected Product Brand: ${productBrand.textContent}\n`,
+            `Selected Product Name: ${productName.textContent}\n`,
+            `Selected Product ID: ${productId.textContent}\n`,
+            `Selected Product Price: ${productPrice.textContent}\n`,
+            `Selected Product Price: ${productQuantity.textContent}\n`,
+            `Selected Product Size: ${requiredSize}\n`);
+    } else {
+        alert("Kindly select a size before adding to cart.");
+    }
+});
 
-    console.log(productBrand.textContent , productName.textContent ,productId.textContent , productPrice.textContent ,productSize);
+
+
+   
+
+//   if (productSize) {
+//         let selectedvalue = productSize.querySelector('span');
+//         console.log(selectedvalue.textContent)
+//  } else {
+//            console.log(productBrand.textContent , productName.textContent ,productId.textContent , productPrice.textContent ,productSize ,addCart);
+//  }
+    
+    
+
+
+  
 
 
 
@@ -162,7 +194,9 @@ const listedItems = document.querySelectorAll(".drop-down-main ul li");
 
 });
 
+function selectedProductSize(){
 
+}
 // out side function====================================================
 function toggleSelectedClass() {
     // Toggle the "selected" class on the clicked <li> element
