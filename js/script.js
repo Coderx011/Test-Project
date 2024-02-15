@@ -11,6 +11,7 @@ priceInput.forEach(input =>{
         if((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max){
             if(e.target.className === "input-min"){
                 rangeInput[0].value = minPrice;
+               
                 range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
             }else{
                 rangeInput[1].value = maxPrice;
@@ -154,7 +155,7 @@ const listedItems = document.querySelectorAll(".drop-down-main ul li");
             });
         }
     });
-
+if (addCart){
 addCart.addEventListener("click", () => {
     const activeSizeButton = Array.from(listsize).find(item => item.classList.contains('active'));
     const requiredSize = activeSizeButton ? activeSizeButton.querySelector('span').textContent : null;
@@ -163,31 +164,14 @@ addCart.addEventListener("click", () => {
         console.log(`Selected Product Brand: ${productBrand.textContent}\n`,
             `Selected Product Name: ${productName.textContent}\n`,
             `Selected Product ID: ${productId.textContent}\n`,
-            `Selected Product Price: ${productPrice.textContent}\n`,
+            `Selected Product Price:PKR ${productPrice.textContent}\n`,
             `Selected Product Price: ${productQuantity.textContent}\n`,
             `Selected Product Size: ${requiredSize}\n`);
     } else {
         alert("Kindly select a size before adding to cart.");
     }
 });
-
-
-
-   
-
-//   if (productSize) {
-//         let selectedvalue = productSize.querySelector('span');
-//         console.log(selectedvalue.textContent)
-//  } else {
-//            console.log(productBrand.textContent , productName.textContent ,productId.textContent , productPrice.textContent ,productSize ,addCart);
-//  }
-    
-    
-
-
-  
-
-
+}
 
 
     // ===========DOM=========
